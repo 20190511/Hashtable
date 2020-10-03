@@ -189,6 +189,12 @@ void question1(int num1_array[], int input_data[], int find_key [])
     for (int i = 0; i < 8; i++)
     {
         input_hash(1, num1_array, input_data[i]);
+        if (i >= 4)
+        {
+            printf("Linear Probing : input %d , and print table\n", input_data[i]);
+            print_hash(num1_array);
+            printf("\n");
+        }
     }
     //선형 조사법으로 해당하는 key값을 찾기
     for (int k = 0; k < 4; k++)
@@ -209,6 +215,12 @@ void question2(int num2_array[] , int input_data[] , int find_key [])
     for (int i = 0; i < 8; i++)
     {
         input_hash(2, num2_array, input_data[i]);
+        if (i >= 4)
+        {
+            printf("Quadratic Probing : input %d , and print table\n", input_data[i]);
+            print_hash(num2_array);
+            printf("\n");
+        }
     }
     //이차원 조사법으로 해당하는 key값을 찾기
     for (int k = 0; k < 4; k++)
@@ -229,6 +241,12 @@ void question3(int num3_array[] , int input_data[], int find_key [])
     for (int i = 0; i < 8; i++)
     {
         input_hash(3, num3_array, input_data[i]);
+        if (i >= 4)
+        {
+            printf("Chaining : input %d , and print table\n", input_data[i]);
+            printChainNode();
+            printf("\n");
+        }
     }
     //체이닝 조사법으로 해당하는 key값을 찾기
     for (int k = 0; k < 4; k++)
@@ -291,7 +309,8 @@ int main(void)
     question3(num3_array, input_data , find_key);
 
 
-    printf("-------------------------------------------------\n\n");
+    printf("-------------------------------------------------\n");
+    printf(" +++++++++ print Whole Array +++++++++ \n\n");
 
 
     //해당하는 해시테이블들을 출력해줌.
